@@ -1,4 +1,3 @@
-
 #import "UIPagedScrollView.h"
 
 @implementation UIPagedScrollView
@@ -52,8 +51,7 @@
 	
 }
 
-- (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated
-{
+- (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated {
 	
 	// Jump out if the requested page is invalid
 	if (number < 0 || number > [self pageCount]) return;

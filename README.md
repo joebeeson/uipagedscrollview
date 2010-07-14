@@ -4,7 +4,7 @@ A Cocoa Touch class for easily implementing and using paged UIScrollView objects
 
 ## Description
 
-This class wraps UIScrollView with some functionality useful when using it with paging. A selector will is fired on the delegate when the class determines that the page has been changed.
+This class wraps UIScrollView with some functionality useful when using it with paging. A selector is fired on the delegate when the class determines that the page has been changed.
 
 ## Instance Methods
 
