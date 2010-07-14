@@ -54,7 +54,7 @@
 - (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated {
 	
 	// Jump out if the requested page is invalid
-	if (number < 0 || number > [self pageCount]) return;
+	if (pageNumber < 0 || pageNumber > [self pageCount]) return;
 	
 	CGRect pageRectangle = CGRectMake(
 		(self.frame.size.width * (pageNumber - 1)),
