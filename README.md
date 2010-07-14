@@ -1,18 +1,24 @@
 # UIPagedScrollView
 
-A Cocoa Touch class for easily implementing and using paged UIScrollView objects
+A Cocoa Touch class for easily implementing and using paged UIScrollView objects.
 
 ## Description
 
-This class wraps UIScrollView with some functionality useful when using it with paging. The delegate will receive notifications at scrollViewChangedPage:oldPageNumber: when it is determined that the current page has been changed.
+This class wraps UIScrollView with some functionality useful when using it with paging. A selector will is fired on the delegate when the class determines that the page has been changed.
 
-## Functions
- * `scrollToPage:animated:` Scrolls the `UIScrollView` to the requested page and animates on request.
- * `setPageCount:` Configures the `UIScrollView` for the passed number of pages.
+## Instance Methods
+
+ * `scrollToPage:(int) animated:(BOOL)` Scrolls the `UIScrollView` to the requested page and animates on request.
+ * `setPageCount:(int)` Configures the `UIScrollView` for the passed number of pages.
 
 ## Properties
- * `page` The current visible page
- * `pageCount` Number of pages the `UIScrollView` was configured for.
+
+ * `(unsigned int) page` The current visible page number.
+ * `(unsigned int) pageCount` Number of pages the `UIScrollView` was configured for.
+
+## Delegate Methods
+
+ * `(void) scrollViewChangedPage:(int) oldPageNumber:(int)` Triggered by the class to signal a page change.
 
 ## Usage
 
