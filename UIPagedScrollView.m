@@ -8,6 +8,7 @@
 
 	if (self = [super init]) {
 	
+		[self setPageCount:1];
 		[self setPage:1];
 		[self setPagingEnabled:YES];
 		
