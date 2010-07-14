@@ -9,10 +9,7 @@
 
 	if (self = [super init]) {
 	
-		// Always starts at least on page one
 		[self setPage:1];
-		
-		// This is obvious.
 		[self setPagingEnabled:YES];
 		
 	}
@@ -40,6 +37,9 @@
 
 - (void)setPage:(unsigned int)number {
 	
+	// Jump out if the requested page is invalid
+	if (number < 0 || number > [self pageCount]) return;
+	
 	// Keep the old page number around for a second
 	unsigned int oldNumber = page;
 	page = number;
@@ -54,6 +54,9 @@
 
 - (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated
 {
+	
+	// Jump out if the requested page is invalid
+	if (number < 0 || number > [self pageCount]) return;
 	
 	CGRect pageRectangle = CGRectMake(
 		(self.frame.size.width * (pageNumber - 1)),
