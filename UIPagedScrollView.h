@@ -1,3 +1,11 @@
+/**
+ * UIPagedScrollView
+ *
+ * Handles a handful of paging related tasks commonly required by UIScrollView
+ * instances that having paging enabled.
+ *
+ * @author Joe Beeson <jbeeson@gmail.com>
+ */
 
 #import <UIKit/UIKit.h>
 #import "UIPagedScrollViewDelegate.h"
