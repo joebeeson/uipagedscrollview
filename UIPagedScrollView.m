@@ -1,4 +1,3 @@
-
 #import "UIPagedScrollView.h"
 
 @implementation UIPagedScrollView
@@ -9,7 +8,7 @@
 
 	if (self = [super init]) {
 	
-		// Always starts at least on page one
+		// Always starts on page one
 		[self setPage:1];
 		
 		// This is obvious.
@@ -52,8 +51,7 @@
 	
 }
 
-- (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated
-{
+- (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated {
 	
 	CGRect pageRectangle = CGRectMake(
 		(self.frame.size.width * (pageNumber - 1)),
