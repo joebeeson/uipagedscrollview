@@ -28,3 +28,7 @@ This class wraps UIScrollView with some functionality useful when using it with 
       [pagedScrollView setDelegate:self];
 
       // Create the scrollViewChangedPage:oldPageNumber: method to catch page changes
+
+## Notes
+
+Feel free to fork and submit patches, fixes, optimizations, anything.
