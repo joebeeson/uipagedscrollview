@@ -11,7 +11,9 @@
 
 	if (fmodf(self.contentOffset.x, self.frame.size.width) == 0.0) {
 	
-		if ([self determinePageByContentOffset] != page) {
+		unsigned int currentPage = (((self.contentOffset.x + self.frame.size.width) * pageCount) / self.contentSize.width);
+		
+		if (currentPage != page) {
 		
 			[self setPage:currentPage];
 			
@@ -59,13 +61,6 @@
 - (void)setPagingEnabled:(BOOL)value {
 
 	[super setPagingEnabled:YES];
-	
-}
-
-- (unsigned int)determinePageByContentOffset {
-	
-	CGFloat pageWidth = self.frame.size.width;
-	return (floor((self.contentOffset.x - pageWidth / 2) / pageWidth) + 1) + 1;
 	
 }
 

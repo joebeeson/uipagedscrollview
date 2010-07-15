@@ -46,14 +46,6 @@
  */
 - (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated;
 
-/**
- * Inspects the contentOffset value to determine which page we are currently
- * viewing.
- *
- * @return unsigned int
- */
-- (unsigned int)determinePageByContentOffset;
-
 @property (nonatomic, assign) id < UIPagedScrollViewDelegate > delegate;
 @property (nonatomic) unsigned int page;
 @property (nonatomic) unsigned int pageCount;
