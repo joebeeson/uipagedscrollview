@@ -18,7 +18,7 @@ This class wraps UIScrollView with some functionality useful when using it with 
 
 ## Delegate Methods
 
- * `(void) scrollViewChangedPage:(int) oldPageNumber:(int)` Triggered by the class to signal a page change.
+ * `(void) scrollViewDidChangePage:(int) oldPageNumber:(int)` Triggered by the class to signal a page change.
 
 ## Usage
 
