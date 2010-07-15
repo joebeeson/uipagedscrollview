@@ -4,23 +4,10 @@
 
 @synthesize delegate, page, pageCount;
 
-- (id)init {
-
-	if (self = [super init]) {
-	
-		[self setPage:1];
-		[self setPagingEnabled:YES];
-		
-	}
-	
-	return self;
-	
-}
-
 - (void)setContentOffset:(CGPoint)point {
 	
 	[super setContentOffset:point];
-	
+
 	if (fmodf(self.contentOffset.x, self.frame.size.width) == 0.0) {
 	
 		NSUInteger currentPage = [self determinePageByContentOffset];
@@ -37,24 +24,26 @@
 - (void)setPage:(unsigned int)number {
 	
 	// Jump out if the requested page is invalid
-	if (number < 0 || number > [self pageCount]) return;
+	if (number < 1 || number > [self pageCount]) return;
 	
-	// Keep the old page number around for a second
-	unsigned int oldNumber = page;
-	page = number;
-	
-	if ([[self delegate] respondsToSelector:@selector(scrollViewChangedPage:oldPageNumber:)]) {
+	if (number != page) {
 		
-		[[self delegate] scrollViewChangedPage:page oldPageNumber:oldNumber];
-		
+		if ([[self delegate] respondsToSelector:@selector(scrollViewDidChangePage:oldPageNumber:)]) {
+			
+			[[self delegate] scrollViewDidChangePage:number oldPageNumber:page];
+			
+		}
+			
 	}
+	
+	page = number;
 	
 }
 
 - (void)scrollToPage:(unsigned int)pageNumber animated:(BOOL)animated {
 	
 	// Jump out if the requested page is invalid
-	if (number < 0 || number > [self pageCount]) return;
+	if (pageNumber < 1 || pageNumber > [self pageCount]) return;
 	
 	CGRect pageRectangle = CGRectMake(
 		(self.frame.size.width * (pageNumber - 1)),
@@ -81,13 +70,13 @@
 }
 
 - (void)setPageCount:(unsigned int)number {
-
+	
 	// Change our content size to match
 	[self setContentSize:CGSizeMake(
 		(self.frame.size.width * number),
 		self.frame.size.height
 	)];
-
+	
 	// Store the value away
 	pageCount = number;
 	

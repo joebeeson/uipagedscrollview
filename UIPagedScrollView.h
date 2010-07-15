@@ -55,7 +55,7 @@
 - (unsigned int)determinePageByContentOffset;
 
 @property (nonatomic, assign) id < UIPagedScrollViewDelegate > delegate;
-@property (nonatomic) NSUInteger page;
-@property (nonatomic) NSUInteger pageCount;
+@property (nonatomic) unsigned int page;
+@property (nonatomic) unsigned int pageCount;
 
 @end

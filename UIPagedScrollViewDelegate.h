@@ -14,6 +14,6 @@
  * @param unsigned int oldNumber
  * @return void 
  */
-- (void)scrollViewChangedPage:(unsigned int)newNumber oldPageNumber:(unsigned int)oldNumber;
+- (void)scrollViewDidChangePage:(unsigned int)newNumber oldPageNumber:(unsigned int)oldNumber;
 
 @end
