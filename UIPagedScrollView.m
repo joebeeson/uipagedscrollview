@@ -10,8 +10,7 @@
 
 	if (fmodf(self.contentOffset.x, self.frame.size.width) == 0.0) {
 	
-		NSUInteger currentPage = [self determinePageByContentOffset];
-		if (currentPage != page) {
+		if ([self determinePageByContentOffset] != page) {
 		
 			[self setPage:currentPage];
 			
@@ -56,7 +55,7 @@
 	
 }
 
-- (void)setPagingEnabled:(BOOL)vale {
+- (void)setPagingEnabled:(BOOL)value {
 
 	[super setPagingEnabled:YES];
 	
@@ -88,6 +87,5 @@
     [super dealloc];
 
 }
-
 
 @end
