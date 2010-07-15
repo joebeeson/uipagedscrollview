@@ -13,8 +13,8 @@
 @interface UIPagedScrollView : UIScrollView {
 
 	/**
-	 * Sets our delegate instance to requiring to implement our delegate, which
-	 * inherits the UIScrollViewDelegate and adds a couple optional methods.
+	 * The delegate we will send notifications to. Must implement our protocol
+	 * which is derived from UIScrollViewDelegate.
 	 *
 	 * @var id
 	 * @protocol UIPagedScrollViewDelegate
