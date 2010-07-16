@@ -5,6 +5,19 @@
 
 @synthesize delegate, page, pageCount;
 
+- (void)awakeFromNib {
+	
+	// We always have at least one page
+	[self setPageCount:1];
+	
+	// We have to have paging enabled
+	[self setPagingEnabled:YES];
+	
+	// Always start on page one
+	[self setPage:1];
+	
+}
+
 - (void)setContentOffset:(CGPoint)point {
 	
 	[super setContentOffset:point];
@@ -30,15 +43,16 @@
 	
 	if (number != page) {
 		
+		int oldPageNumber = page;
+		page = number;
+		
 		if ([[self delegate] respondsToSelector:@selector(scrollViewDidChangePage:oldPageNumber:)]) {
 			
-			[[self delegate] scrollViewDidChangePage:number oldPageNumber:page];
+			[[self delegate] scrollViewDidChangePage:page oldPageNumber:oldPageNumber];
 			
 		}
 			
 	}
-	
-	page = number;
 	
 }
 
